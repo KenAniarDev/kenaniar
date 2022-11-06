@@ -38,40 +38,39 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
     return {
       // Passed to the page component as props
-      props: { project },
+      props: project,
     };
   } catch (e) {
     return { notFound: true };
   }
 };
 
-const imageszxc = [
-  "https://timellenberger.com/static/blog-content/dark-mode/win10-dark-mode.jpg",
-  "https://timellenberger.com/static/blog-content/dark-mode/macos-dark-mode.png",
-  "https://timellenberger.com/static/blog-content/dark-mode/android-9-dark-mode.jpg",
-];
-
 const Project = ({
-  project: { title, thumbnail, link, role, tech, images, videos, description },
-}: {
-  project: ProjectData;
-}) => {
-  const [isOpenLightBox, setIsOpenLightBox] = useState(false);
-
+  title,
+  thumbnail,
+  link,
+  role,
+  tech,
+  images,
+  videos,
+  description,
+}: ProjectData) => {
   return (
     <div>
       <Navbar />
-      <main className="py-5 max-w-[1280px] mt-10 mb-10 mx-auto shadow">
+      <main className="max-w-[1280px] mt-10 mb-10 mx-auto shadow">
         <Image
-          src={thumbnail}
+          src={thumbnail ? thumbnail : "/assets/images/project.jpg"}
           width={1280}
           height={500}
-          alt={title + " Thumbnail"}
+          alt={title ? title : "Placeholder Title" + " Thumbnail"}
           className="border-b border-gray-200"
         />
         <div className="px-5">
           <div className="mt-4 mb-4 flex justify-between ">
-            <h1 className="font-semibold text-4xl ">{title}</h1>
+            <h1 className="font-semibold text-4xl ">
+              {title ? title : "Placeholder Title"}
+            </h1>
             {link && (
               <div className="min-w-[120px]">
                 <a
@@ -98,29 +97,32 @@ const Project = ({
             pellentesque, enim a volutpat dictum, neque magna varius augue, sit
             amet viverra nisl urna gravida dolor.
           </p>
-
-          <div className="flex flex-wrap gap-2 text-lg mb-4 ">
-            <span className="font-semibold uppercase">Role:</span>
-            {role.map((item, i) => (
-              <div
-                key={i}
-                className="text-sm font-normal bg-cyan-800 text-white flex flex-wrap items-center px-3 py-1 rounded-full"
-              >
-                {item}
-              </div>
-            ))}
-          </div>
-          <div className="flex flex-wrap gap-2 text-lg pb-10">
-            <span className="font-semibold uppercase">Tech Stack:</span>
-            {tech.map((item, i) => (
-              <div
-                key={i}
-                className="text-sm font-normal bg-teal-800 text-white flex flex-wrap items-center px-3 py-1 rounded-full"
-              >
-                {item}
-              </div>
-            ))}
-          </div>
+          {role && (
+            <div className="flex flex-wrap gap-2 text-lg mb-4 ">
+              <span className="font-semibold uppercase">Role:</span>
+              {role.map((item, i) => (
+                <div
+                  key={i}
+                  className="text-sm font-normal bg-cyan-800 text-white flex flex-wrap items-center px-3 py-1 rounded-full"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+          )}
+          {tech && (
+            <div className="flex flex-wrap gap-2 text-lg pb-10">
+              <span className="font-semibold uppercase">Tech Stack:</span>
+              {tech.map((item, i) => (
+                <div
+                  key={i}
+                  className="text-sm font-normal bg-teal-800 text-white flex flex-wrap items-center px-3 py-1 rounded-full"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+          )}
 
           {images && (
             <div>

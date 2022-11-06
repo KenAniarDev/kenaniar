@@ -19,11 +19,11 @@ const Projects: NextPage = () => {
             {workProjectData.map((item, i) => (
               <Card
                 key={i}
-                title={item.title}
-                slug={item.slug}
-                thumbnail={item.thumbnail}
-                role={item.role}
-                tech={item.tech}
+                title={item?.title}
+                slug={item?.slug}
+                thumbnail={item?.thumbnail}
+                role={item?.role}
+                tech={item?.tech}
               />
             ))}
           </div>
@@ -36,11 +36,11 @@ const Projects: NextPage = () => {
             {personalProjectData.map((item, i) => (
               <Card
                 key={i}
-                title={item.title}
-                slug={item.slug}
-                thumbnail={item.thumbnail}
-                role={item.role}
-                tech={item.tech}
+                title={item?.title}
+                slug={item?.slug}
+                thumbnail={item?.thumbnail}
+                role={item?.role}
+                tech={item?.tech}
               />
             ))}
           </div>

@@ -263,7 +263,6 @@ const workProjectData = [
     images: [
       "/assets/images/projects/matcha-admin/1.jpg",
       "/assets/images/projects/matcha-admin/2.jpg",
-      "/assets/images/projects/matcha-admin/3.jpg",
       "/assets/images/projects/matcha-admin/4.jpg",
       "/assets/images/projects/matcha-admin/5.jpg",
       "/assets/images/projects/matcha-admin/6.jpg",
@@ -272,7 +271,6 @@ const workProjectData = [
       "/assets/images/projects/matcha-admin/9.jpg",
       "/assets/images/projects/matcha-admin/10.jpg",
       "/assets/images/projects/matcha-admin/11.jpg",
-      "/assets/images/projects/matcha-admin/12.jpg",
     ],
   },
   {

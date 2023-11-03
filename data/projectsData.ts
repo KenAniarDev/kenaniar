@@ -291,12 +291,8 @@ const workProjectData = [
     images: [
       "/assets/images/projects/sanvicentemis/1.png",
       "/assets/images/projects/sanvicentemis/2.png",
-      "/assets/images/projects/sanvicentemis/3.png",
-      "/assets/images/projects/sanvicentemis/4.png",
-      "/assets/images/projects/sanvicentemis/5.png",
       "/assets/images/projects/sanvicentemis/6.png",
       "/assets/images/projects/sanvicentemis/7.png",
-      "/assets/images/projects/sanvicentemis/8.png",
     ],
   },
   {
